@@ -1,31 +1,44 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>LESSA - Iniciar Sesión</title>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/login.css">
+<?php
+session_start();
 
-</head>
-<body>
+require_once "config/conexion.php";
 
-<div class="logo">
-    <span class="material">sign_language</span>
-  </div>
-<h1>LESSA</h1>
-<p>Ingresa tu correo para continuar aprendiendo lengua de señas</p>
+$correo = $_POST['correo'];
+$contrasena = $_POST['contrasena'];
 
-<form action="validar.php" method="POST">
-  <label>Correo:</label>
-  <input type="email" name="correo" placeholder="nombre@ejemplo.com" required>
+$sql = "SELECT * FROM usuario WHERE correo = :correo";
 
-  <label>Contraseña:</label>
-  <input type="password" name="contrasena" placeholder="••••••••" required>
+$consulta = $conexion->prepare($sql);
 
-  <button type="submit">Ingresar</button>
-</form>
+$consulta->bindParam(':correo', $correo);
 
-<p style="margin-top:20px">¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
+$consulta->execute();
 
-</body>
-</html>
+$usuario = $consulta->fetch(PDO::FETCH_ASSOC);
+
+if ($usuario && password_verify($contrasena, $usuario['contrasena'])) {
+
+    $_SESSION['id_usuario'] = $usuario['id_usuario'];
+    $_SESSION['nombre'] = $usuario['nombre'];
+    $_SESSION['correo'] = $usuario['correo'];
+    $_SESSION['rol'] = $usuario['rol'];
+
+    if ($usuario['rol'] == 'Administrador') {
+
+        header("Location: admin/index.php");
+        exit();
+
+    } else {
+
+        header("Location: estudiante/index.php");
+        exit();
+
+    }
+
+} else {
+
+    echo "Correo o contraseña incorrectos.";
+
+}
+
+?>

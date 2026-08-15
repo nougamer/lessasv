@@ -21,11 +21,9 @@
 
   <label>Contraseña:</label>
   <input type="password" name="contrasena" placeholder="••••••••" required>
-
   <button type="submit">Ingresar</button>
 </form>
-
+<p style="margin-top:20px">¿Olvidastes tu contraseña? <a href="recuperar.php">Recupérala</a></p>
 <p style="margin-top:20px">¿No tienes cuenta? <a href="registro.php">Regístrate</a></p>
-
 </body>
 </html>

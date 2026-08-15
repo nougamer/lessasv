@@ -21,10 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $contrasena = $_POST['contrasena'];
     $rol = $_POST['rol'];
 
-    $hash = password_hash(
-        $contrasena,
-        PASSWORD_DEFAULT
-    );
+    // Convertimos la contraseña en un hash
+    $hash = password_hash($contrasena, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO usuario
             (nombre, correo, contrasena, rol)
@@ -62,34 +60,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <label>Nombre:</label>
         <br>
-
-        <input
-            type="text"
-            name="nombre"
-            required
-        >
+        <input type="text" name="nombre" required>
 
         <br><br>
 
         <label>Correo:</label>
         <br>
-
-        <input
-            type="email"
-            name="correo"
-            required
-        >
+        <input type="email" name="correo" required>
 
         <br><br>
 
         <label>Contraseña:</label>
         <br>
-
-        <input
-            type="password"
-            name="contrasena"
-            required
-        >
+        <input type="password" name="contrasena" required>
 
         <br><br>
 
@@ -97,15 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <br>
 
         <select name="rol" required>
-
-            <option value="Estudiante">
-                Estudiante
-            </option>
-
-            <option value="Administrador">
-                Administrador
-            </option>
-
+            <option value="Estudiante">Estudiante</option>
+            <option value="Administrador">Administrador</option>
         </select>
 
         <br><br>
@@ -118,9 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <br>
 
-    <a href="index.php">
-        Cancelar
-    </a>
+    <a href="index.php">Cancelar</a>
 
 </body>
 

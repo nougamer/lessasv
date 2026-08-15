@@ -25,7 +25,7 @@
   <button type="submit">Ingresar</button>
 </form>
 
-<p style="margin-top:20px">¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
+<p style="margin-top:20px">¿No tienes cuenta? <a href="registro.php">Regístrate</a></p>
 
 </body>
 </html>

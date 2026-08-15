@@ -40,7 +40,8 @@ $usuarios = $consulta->fetchAll(PDO::FETCH_ASSOC);
     <a href="../index.php">Volver al panel</a>
     <br> 
     <a href="../usuarios/crear.php">Crear Usuario</a>
-    
+    <br>
+
 
     <br><br>
 
@@ -77,6 +78,10 @@ $usuarios = $consulta->fetchAll(PDO::FETCH_ASSOC);
                 <td>
                     <a href="restablecer.php?id=<?php echo $usuario['id_usuario']; ?>">
                         Restablecer contraseña
+                    </a>
+                    <br>
+                    <a href="editar.php?id=<?php echo $usuario['id_usuario']; ?>">
+                        Editar
                     </a>
                 </td>
 

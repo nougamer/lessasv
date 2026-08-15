@@ -1,5 +1,6 @@
-body{
-    background:#050505;
+
+  body{
+   background: radial-gradient(circle at top left, #0d1326 0%, #08090a 55%);
     color:#fff;
     font-family:sans-serif;
     display:flex;

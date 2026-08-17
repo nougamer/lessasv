@@ -20,7 +20,11 @@
   <input type="email" name="correo" placeholder="nombre@ejemplo.com" required>
 
   <label>Contraseña:</label>
-  <input type="password" name="contrasena" placeholder="••••••••" required>
+  <div style="position:relative; display:inline-block; width:100%;">
+    <input type="password" id="contrasena" name="contrasena" placeholder="••••••••" required style="width:100%; padding-right:35px; box-sizing:border-box;">
+    <span class ="material" onmousedown="contrasena.type='text'" onmouseup="contrasena.type='password'" onmouseleave="contrasena.type='password'" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer; font-size:15px;">visibility</span>
+  </div>
+
   <button type="submit">Ingresar</button>
 </form>
 <p style="margin-top:20px">¿Olvidastes tu contraseña? <a href="recuperar.php">Recupérala</a></p>

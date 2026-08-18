@@ -83,6 +83,10 @@ $usuarios = $consulta->fetchAll(PDO::FETCH_ASSOC);
                     <a href="editar.php?id=<?php echo $usuario['id_usuario']; ?>">
                         Editar
                     </a>
+                    <br>
+                    <a href="eliminar.php?id=<?php echo $usuario['id_usuario']; ?>">
+                        Eliminar
+                    </a>
                 </td>
 
             </tr>

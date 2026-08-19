@@ -36,9 +36,10 @@ if ($usuario && password_verify($contrasena, $usuario['contrasena'])) {
     }
 
 } else {
-
-    echo "Correo o contraseña incorrectos.";
-
+    header("Location: login.php?error=1");
+    exit();
 }
+
+
 
 ?>

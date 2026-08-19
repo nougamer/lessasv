@@ -8,6 +8,41 @@
 
 </head>
 <body>
+  <style>
+    .toast-error{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#1a0d0d;
+    border:1px solid #ff5252;
+    color:#ff5252;
+    padding:12px 20px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    font-weight:600;
+    animation: bajar .3s ease, desaparecer .3s ease 3s forwards;
+    z-index:999;
+}
+@keyframes bajar{
+    from{ top:-50px; opacity:0; }
+    to{ top:20px; opacity:1; }
+}
+@keyframes desaparecer{
+    to{ opacity:0; top:-50px; }
+}
+  </style>
+  
+<?php if (isset($_GET['error'])) { ?>
+    <div class="toast-error">
+        <span class="material">error</span>
+        Correo o contraseña incorrectos
+    </div>
+<?php } ?>
+
 
 <div class="logo">
     <span class="material">sign_language</span>

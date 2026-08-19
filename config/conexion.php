@@ -4,7 +4,7 @@ $host = "localhost";
 $puerto = "5432";
 $basedatos = "lessa_sv";
 $usuario = "postgres";
-$contrasena = "123456789";
+$contrasena = "404547455";
 
 try {
 

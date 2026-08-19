@@ -26,7 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $consulta->execute();
 
-    echo "Usuario registrado correctamente.";
+    header("Location: login.php");
+    exit();
 }
 
 ?>
@@ -37,40 +38,53 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Registro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/registro.css">
 </head>
 
 <body>
 
-    <h1>Crear cuenta</h1>
+    <div class="contenedor">
 
-    <form method="POST">
+        <div class="panel-form">
 
-        <label>Nombre:</label>
-        <br>
+            <div class="logo">
+                <span class="material">sign_language</span>
+            </div>
+            <h1>LESSA</h1>
+            <p>Crea tu cuenta y empieza a aprender lengua de señas</p>
 
-        <input type="text" name="nombre" required>
+            <?php if (isset($mensaje)) { ?>
+                <p class="exito"><?php echo $mensaje; ?></p>
+            <?php } ?>
 
-        <br><br>
+            <form method="POST">
 
-        <label>Correo:</label>
-        <br>
+                <label>Nombre:</label>
+                <input type="text" name="nombre" required>
 
-        <input type="email" name="correo" required>
+                <label>Correo:</label>
+                <input type="email" name="correo" required>
 
-        <br><br>
+                <label>Contraseña:</label>
+                <input type="password" name="contrasena" required>
 
-        <label>Contraseña:</label>
-        <br>
+                <button type="submit">Registrarse</button>
 
-        <input type="password" name="contrasena" required>
+            </form>
 
-        <br><br>
+            <p style="margin-top:20px">¿Ya tienes cuenta? <a href="login.php">Inicia sesión</a></p>
 
-        <button type="submit">
-            Registrarse
-        </button>
+        </div>
 
-    </form>
+        <div class="panel-imagen">
+            <div>
+                <h2>Aprende Lengua de Señas Salvadoreña</h2>
+                <p>Únete a LESSA y comienza a comunicarte sin barreras.</p>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 

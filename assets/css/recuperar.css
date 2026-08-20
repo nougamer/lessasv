@@ -1,0 +1,95 @@
+body{
+    background: radial-gradient(circle at top left, #0d1326 0%, #08090a 55%);
+    color:#fff;
+    font-family:sans-serif;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    margin:0;
+    text-align:center
+}
+
+.logo{
+    width:70px;
+    height:70px;
+    background:#0052ff;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    margin-bottom:10px
+}
+
+h1{
+    letter-spacing:3px
+}
+
+p{
+    color:#888;
+    max-width:300px;
+    margin:10px auto 20px
+}
+
+a{
+    color:#0052ff;
+    text-decoration:underline
+}
+
+.material{
+    font-family:'Material Symbols Outlined';
+    font-weight:normal;
+    font-style:normal;
+    font-size:32px;
+    color:#fff;
+    line-height:1
+}
+
+.card-equipo{
+    background:#111;
+    padding:30px;
+    border-radius:16px;
+    width:280px;
+    text-align:left;
+}
+.card-equipo h3{
+    font-size:14px;
+    color:#0052ff;
+    margin-bottom:16px;
+    text-align:center;
+}
+
+.integrante{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:13px;
+    padding:10px 0;
+    border-bottom:1px solid #222;
+}
+.integrante .material{ font-size:18px; color:#888; }
+
+.contacto-titulo{
+    color:#888;
+    font-size:12px;
+    text-align:center;
+    margin:18px 0 10px;
+}
+
+.btn-whatsapp{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:#0052ff;
+    color:#fff;
+    text-decoration:none;
+    padding:12px;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:13px;
+}
+.btn-whatsapp:hover{ opacity:.9; }
+.btn-whatsapp .material{ font-size:18px; color:#fff; }

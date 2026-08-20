@@ -1,0 +1,122 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+
+body { background: #0a0a0a; color: #fff; min-height: 100vh; display: flex; }
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: linear-gradient(180deg, #0d1326, #05070d);
+    border-right: 1px solid #1c2440;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 14px;
+    gap: 4px;
+}
+
+.logo { display: flex; align-items: center; gap: 10px; padding: 6px 8px 20px; }
+.logo .logo-icono {
+    width: 36px; height: 36px; border-radius: 9px;
+    background: #0052ff; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 14px rgba(0, 82, 255, .5);
+}
+.logo strong { display: block; font-size: 15px; color: #fff; }
+.logo span { font-size: 11px; color: rgba(255,255,255,.45); }
+
+.nav-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 12px; border-radius: 10px;
+    color: rgba(255,255,255,.7); text-decoration: none;
+    font-size: 13.5px; font-weight: 500;
+    border-left: 3px solid transparent;
+    transition: background .15s, color .15s;
+}
+.nav-item:hover { background: rgba(255,255,255,.06); color: #fff; }
+.nav-item.activo {
+    background: #0052ff; color: #fff; font-weight: 700;
+    border-left-color: #fff;
+    box-shadow: 0 4px 14px rgba(0, 82, 255, .35);
+}
+.nav-item svg { flex-shrink: 0; }
+
+.sidebar .abajo { margin-top: auto; display: flex; flex-direction: column; gap: 10px; padding-top: 14px; }
+.perfil-mini {
+    background: rgba(255,255,255,.04); border: 1px solid #1c2440; border-radius: 12px;
+    padding: 8px; display: flex; align-items: center; justify-content: center;
+}
+.avatar-mini {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: #0052ff; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+}
+.salir {
+    display: flex; align-items: center; gap: 8px; justify-content: center;
+    color: #ff5252; text-decoration: none; font-size: 13px; font-weight: 600;
+    padding: 8px;
+}
+.salir:hover { background: rgba(255,82,82,.08); border-radius: 8px; }
+
+/* Contenido */
+.contenido {
+    flex: 1;
+    padding: 40px;
+    background: radial-gradient(circle at top left, #0d1326 0%, #05070d 55%);
+}
+
+.panel { max-width: 900px; margin: 0 auto; }
+
+.bienvenida h1 { font-size: 22px; margin-bottom: 6px; }
+.bienvenida p { color: #888; font-size: 13px; margin-bottom: 28px; }
+
+.stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+.stat-card {
+    flex: 1 1 180px;
+    background: #131313;
+    border: 1px solid #262626;
+    border-radius: 14px;
+    padding: 18px;
+}
+.stat-card .num { font-size: 26px; font-weight: 700; color: #0052ff; }
+.stat-card .label { font-size: 12px; color: #888; margin-top: 4px; }
+
+.seccion-titulo { font-size: 15px; margin-bottom: 14px; }
+
+.lecciones { display: flex; flex-direction: column; gap: 12px; }
+
+.leccion-card {
+    background: #131313;
+    border: 1px solid #262626;
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.leccion-card .icono {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: rgba(0, 82, 255, .15); color: #0052ff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+
+.leccion-card .info { flex: 1; }
+.leccion-card .info h3 { font-size: 14px; margin-bottom: 6px; }
+
+.barra-progreso {
+    width: 100%; height: 6px; background: #262626;
+    border-radius: 6px; overflow: hidden;
+}
+.barra-progreso span {
+    display: block; height: 100%; background: #0052ff; border-radius: 6px;
+}
+
+.leccion-card .porcentaje {
+    font-size: 12px; font-weight: 600; color: #888; min-width: 34px; text-align: right;
+}

@@ -113,89 +113,57 @@ body {
     color: #fff;
 }
 
-/* --- ÁREA PRINCIPAL DE CONTENIDO --- */
+/* --- ÁREA PRINCIPAL --- */
 .contenido {
     margin-left: 240px;
     flex: 1;
-    padding: 40px;
+    padding: 40px 20px;
     background: radial-gradient(circle at top left, #0d1326 0%, #08090a 55%);
     min-height: 100vh;
-}
-
-/* CABECERA DE LA PÁGINA */
-.page-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    justify-content: center;
 }
 
-.page-header h1 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #fff;
-}
-
-.page-header p {
-    font-size: 13.5px;
-    color: #888;
-    margin-top: 4px;
-}
-
-.btn-crear {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, #0052ff 0%, #003ebd 100%);
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: 600;
-    box-shadow: 0 4px 16px rgba(0, 82, 255, 0.35);
-    transition: all 0.2s ease;
-}
-
-.btn-crear:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 22px rgba(0, 82, 255, 0.5);
-}
-
-/* --- LISTA DE TARJETAS (ESTILO MOCKUP) --- */
-.lista-categorias {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    max-width: 900px;
-}
-
-.categoria-card {
+/* --- TARJETA DEL FORMULARIO --- */
+.form-card {
     background: #131313;
-    border: 1px solid #242424;
-    border-radius: 16px;
-    padding: 18px 22px;
+    border: 1px solid #262626;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 560px;
+    padding: 32px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ENCABEZADO */
+.form-header {
     display: flex;
     align-items: center;
-    gap: 20px;
-    transition: all 0.2s ease;
+    gap: 16px;
+    margin-bottom: 26px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #222;
 }
 
-.categoria-card:hover {
-    border-color: #0052ff;
-    transform: translateX(4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-}
-
-/* CUADRO / ÍCONO DE LA IZQUIERDA */
-.categoria-icono-box {
-    width: 52px;
-    height: 52px;
+.form-header-icon {
+    width: 48px;
+    height: 48px;
     border-radius: 14px;
-    background: linear-gradient(135deg, rgba(0, 82, 255, 0.15), rgba(0, 82, 255, 0.05));
-    border: 1px solid rgba(0, 82, 255, 0.25);
+    background: linear-gradient(135deg, rgba(0, 82, 255, 0.2), rgba(0, 82, 255, 0.05));
+    border: 1px solid rgba(0, 82, 255, 0.3);
     color: #0052ff;
     display: flex;
     align-items: center;
@@ -203,96 +171,116 @@ body {
     flex-shrink: 0;
 }
 
-/* DETALLES DE LA CATEGORÍA (CENTRO) */
-.categoria-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.categoria-top {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.categoria-titulo {
-    font-size: 16px;
+.form-header-text h2 {
+    font-size: 20px;
     font-weight: 700;
     color: #fff;
 }
 
-.badge-modulo {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #3b82f6;
-    padding: 3px 10px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.categoria-descripcion {
-    font-size: 13.5px;
+.form-header-text p {
+    font-size: 13px;
     color: #888;
-    line-height: 1.4;
+    margin-top: 3px;
 }
 
-/* ACCIONES DE LA DERECHA */
-.categoria-acciones {
+/* GRUPOS E INPUTS */
+.form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ccc;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 4px;
 }
 
-.btn-accion-editar {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    background: rgba(245, 158, 11, 0.1);
-    border: 1px solid rgba(245, 158, 11, 0.25);
-    color: #f59e0b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: all 0.2s;
-}
-
-.btn-accion-editar:hover {
-    background: #f59e0b;
-    color: #000;
-}
-
-.btn-accion-eliminar {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    background: rgba(255, 82, 82, 0.1);
-    border: 1px solid rgba(255, 82, 82, 0.25);
+.form-group label span.requerido {
     color: #ff5252;
+}
+
+.form-control {
+    background: #0d111a;
+    border: 1px solid #262626;
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.form-control::placeholder {
+    color: #555;
+}
+
+.form-control:focus {
+    border-color: #0052ff;
+    box-shadow: 0 0 0 3px rgba(0, 82, 255, 0.2);
+    background: #101625;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.5;
+}
+
+/* BOTONES DE ACCIÓN */
+.form-actions {
     display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn-guardar, .btn-cancelar {
+    flex: 1;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    transition: all 0.2s;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.btn-accion-eliminar:hover {
-    background: #ff5252;
+.btn-guardar {
+    background: linear-gradient(135deg, #0052ff 0%, #003ebd 100%);
     color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 82, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* ESTADO VACÍO */
-.lista-vacia {
-    background: #131313;
-    border: 1px dashed #262626;
-    border-radius: 16px;
-    padding: 40px;
-    text-align: center;
-    color: #777;
-    max-width: 900px;
+.btn-guardar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(0, 82, 255, 0.5);
+}
+
+.btn-cancelar {
+    background: #262626;
+    color: #ccc;
+    border: 1px solid transparent;
+}
+
+.btn-cancelar:hover {
+    background: #333;
+    color: #fff;
 }
 
 /* MODAL LOGOUT */

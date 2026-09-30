@@ -3,166 +3,432 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Editar lección</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar lección - LESSA SV</title>
+    <link rel="stylesheet" href="../assets/css/editar.css">
 </head>
 
 <body>
 
-    <h1>Editar lección - MVC</h1>
+    <aside class="sidebar">
 
-    <form
-        method="POST"
-        action="/lessasv/controllers/LeccionController.php?accion=editar&id=<?php echo $leccion['id_leccion']; ?>"
-        enctype="multipart/form-data"
-    >
+        <div class="logo">
+            <div class="logo-icono">
+                📖
+            </div>
 
-        <label>Categoría:</label>
-        <br>
+            <div>
+                <strong>LESSA SV</strong>
+                <span>Administrador</span>
+            </div>
+        </div>
 
-        <select name="id_categoria" required>
+        <nav style="display:flex; flex-direction:column; gap:4px;">
 
-            <?php foreach ($categorias as $categoria) { ?>
+            <a href="/lessasv/controllers/InicioController.php?accion=index" class="nav-item">
+                <span>Inicio</span>
+            </a>
 
-                <option
-                    value="<?php echo $categoria['id_categoria']; ?>"
+            <a href="/lessasv/controllers/ModuloController.php?accion=listar" class="nav-item">
+                <span>Módulos</span>
+            </a>
 
-                    <?php
-                    if ($categoria['id_categoria'] == $leccion['id_categoria']) {
-                        echo 'selected';
-                    }
-                    ?>
-                >
+            <a href="/lessasv/controllers/CategoriaController.php?accion=listar" class="nav-item">
+                <span>Categorías</span>
+            </a>
 
-                    <?php
-                    echo htmlspecialchars(
-                        $categoria['nombre_modulo']
-                        . " - "
-                        . $categoria['nombre_categoria']
-                    );
-                    ?>
+            <a href="/lessasv/controllers/LeccionController.php?accion=listar" class="nav-item activo">
+                <span>Lecciones</span>
+            </a>
 
-                </option>
+            <a href="/lessasv/controllers/UsuarioController.php?accion=listar" class="nav-item">
+                <span>Usuarios</span>
+            </a>
 
-            <?php } ?>
+            <a href="/lessasv/controllers/EvaluacionController.php?accion=listar" class="nav-item">
+                <span>Evaluaciones</span>
+            </a>
 
-        </select>
+            <a href="/lessasv/controllers/JuegoController.php?accion=listar" class="nav-item">
+                <span>Juegos</span>
+            </a>
 
-        <br><br>
+        </nav>
 
-        <label>Orden:</label>
-        <br>
+        <div class="abajo">
 
-        <input
-            type="number"
-            name="orden"
-            min="1"
-            value="<?php echo $leccion['orden']; ?>"
-            required
-        >
+            <a href="#" class="salir" id="btnAbrirLogout">
+                <span>Cerrar sesión</span>
+            </a>
 
-        <br><br>
+        </div>
 
-        <label>Título:</label>
-        <br>
+    </aside>
 
-        <input
-            type="text"
-            name="titulo"
-            value="<?php echo htmlspecialchars($leccion['titulo']); ?>"
-            required
-        >
 
-        <br><br>
+    <main class="contenido">
 
-        <label>Descripción:</label>
-        <br>
+        <div class="form-card">
 
-        <textarea name="descripcion"><?php
-            echo htmlspecialchars($leccion['descripcion'] ?? '');
-        ?></textarea>
+            <div class="form-header">
 
-        <br><br>
+                <div class="form-header-left">
 
-        <label>Significado:</label>
-        <br>
+                    <div class="form-header-icon">
+                        📖
+                    </div>
 
-        <textarea name="significado"><?php
-            echo htmlspecialchars($leccion['significado'] ?? '');
-        ?></textarea>
+                    <div class="form-header-text">
 
-        <br><br>
+                        <h2>Editar lección</h2>
 
-        <label>Imagen actual:</label>
-        <br>
+                        <p>
+                            Modifica los datos de la lección.
+                        </p>
 
-        <?php if (!empty($leccion['imagen'])) { ?>
+                    </div>
 
-            <img
-                src="/lessasv/<?php echo htmlspecialchars($leccion['imagen']); ?>"
-                width="120"
-                alt="Imagen de la lección"
+                </div>
+
+                <div class="badge-id">
+                    ID: <?php echo $leccion['id_leccion']; ?>
+                </div>
+
+            </div>
+
+
+            <form
+                method="POST"
+                action="/lessasv/controllers/LeccionController.php?accion=editar&id=<?php echo $leccion['id_leccion']; ?>"
+                enctype="multipart/form-data"
+                class="form-body"
             >
 
-        <?php } else { ?>
+                <div class="form-group">
 
-            <p>Sin imagen.</p>
+                    <label for="id_categoria">
+                        Categoría:
+                    </label>
 
-        <?php } ?>
+                    <select
+                        id="id_categoria"
+                        name="id_categoria"
+                        class="form-control"
+                        required
+                    >
 
-        <label>Nueva imagen:</label>
-        <br>
+                        <?php foreach ($categorias as $categoria) { ?>
 
-        <input
-            type="file"
-            name="imagen"
-            accept="image/jpeg,image/png,image/webp"
-        >
+                            <option
+                                value="<?php echo $categoria['id_categoria']; ?>"
+                                <?php
+                                if ($categoria['id_categoria'] == $leccion['id_categoria']) {
+                                    echo 'selected';
+                                }
+                                ?>
+                            >
+                                <?php
+                                echo htmlspecialchars(
+                                    $categoria['nombre_modulo']
+                                    . " - "
+                                    . $categoria['nombre_categoria']
+                                );
+                                ?>
+                            </option>
 
-        <br><br>
+                        <?php } ?>
 
-        <label>Video actual:</label>
-        <br>
+                    </select>
 
-        <?php if (!empty($leccion['video'])) { ?>
+                </div>
 
-            <video width="220" controls>
 
-                <source
-                    src="/lessasv/<?php echo htmlspecialchars($leccion['video']); ?>"
-                >
+                <div class="form-group">
 
-                Tu navegador no puede reproducir este video.
+                    <label for="orden">
+                        Orden:
+                    </label>
 
-            </video>
+                    <input
+                        type="number"
+                        id="orden"
+                        name="orden"
+                        class="form-control"
+                        min="1"
+                        value="<?php echo htmlspecialchars($leccion['orden']); ?>"
+                        required
+                    >
 
-        <?php } else { ?>
+                </div>
 
-            <p>Sin video.</p>
 
-        <?php } ?>
+                <div class="form-group">
 
-        <label>Nuevo video:</label>
-        <br>
+                    <label for="titulo">
+                        Título:
+                    </label>
 
-        <input
-            type="file"
-            name="video"
-            accept="video/mp4,video/webm"
-        >
+                    <input
+                        type="text"
+                        id="titulo"
+                        name="titulo"
+                        class="form-control"
+                        value="<?php echo htmlspecialchars($leccion['titulo']); ?>"
+                        required
+                    >
 
-        <br><br>
+                </div>
 
-        <button type="submit">
-            Guardar cambios
-        </button>
 
-    </form>
+                <div class="form-group">
 
-    <br>
+                    <label for="descripcion">
+                        Descripción:
+                    </label>
 
-    <a href="/lessasv/controllers/LeccionController.php?accion=listar">
-        Cancelar
-    </a>
+                    <textarea
+                        id="descripcion"
+                        name="descripcion"
+                        class="form-control"
+                    ><?php echo htmlspecialchars($leccion['descripcion']); ?></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="significado">
+                        Significado:
+                    </label>
+
+                    <textarea
+                        id="significado"
+                        name="significado"
+                        class="form-control"
+                    ><?php echo htmlspecialchars($leccion['significado']); ?></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="imagen">
+                        Imagen:
+                    </label>
+
+                    <?php if (!empty($leccion['imagen'])) { ?>
+
+                        <p style="font-size:13px; color:#888;">
+                            Imagen actual:
+                            <?php echo htmlspecialchars($leccion['imagen']); ?>
+                        </p>
+
+                    <?php } ?>
+
+                    <input
+                        type="file"
+                        id="imagen"
+                        name="imagen"
+                        class="form-control"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="video">
+                        Video:
+                    </label>
+
+                    <?php if (!empty($leccion['video'])) { ?>
+
+                        <p style="font-size:13px; color:#888;">
+                            Video actual:
+                            <?php echo htmlspecialchars($leccion['video']); ?>
+                        </p>
+
+                    <?php } ?>
+
+                    <input
+                        type="file"
+                        id="video"
+                        name="video"
+                        class="form-control"
+                        accept="video/mp4,video/webm"
+                    >
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <a
+                        href="/lessasv/controllers/LeccionController.php?accion=listar"
+                        class="btn-cancelar"
+                    >
+                        Cancelar
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="btn-actualizar"
+                    >
+                        Guardar cambios
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <!-- MODAL CERRAR SESIÓN -->
+
+    <div
+        id="modalLogout"
+        class="modal-overlay"
+        style="display: none;"
+    >
+
+        <div class="modal-box">
+
+            <div id="boxPreguntaLogout">
+
+                <div class="modal-icono-danger">
+                    ⚠
+                </div>
+
+                <h3>¿Cerrar sesión?</h3>
+
+                <p>
+                    ¿Estás seguro de que deseas salir del Panel Administrador?
+                </p>
+
+                <div class="modal-acciones">
+
+                    <button
+                        type="button"
+                        class="btn-secundario"
+                        id="btnCancelarLogout"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-danger"
+                        id="btnConfirmarLogout"
+                    >
+                        Sí, salir
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="boxCargandoLogout"
+                style="display: none;"
+            >
+
+                <div class="rueda-spinner"></div>
+
+                <h3>Cerrando sesión...</h3>
+
+                <p>
+                    Redirigiendo en
+                    <strong id="txtSegundosLogout">5</strong>
+                    segundos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const btnAbrirLogout =
+            document.getElementById('btnAbrirLogout');
+
+        const btnCancelarLogout =
+            document.getElementById('btnCancelarLogout');
+
+        const btnConfirmarLogout =
+            document.getElementById('btnConfirmarLogout');
+
+        const modalLogout =
+            document.getElementById('modalLogout');
+
+        const boxPreguntaLogout =
+            document.getElementById('boxPreguntaLogout');
+
+        const boxCargandoLogout =
+            document.getElementById('boxCargandoLogout');
+
+        const txtSegundosLogout =
+            document.getElementById('txtSegundosLogout');
+
+
+        btnAbrirLogout.addEventListener('click', function (e) {
+
+            e.preventDefault();
+
+            boxPreguntaLogout.style.display = 'block';
+
+            boxCargandoLogout.style.display = 'none';
+
+            modalLogout.style.display = 'flex';
+
+        });
+
+
+        btnCancelarLogout.addEventListener('click', function () {
+
+            modalLogout.style.display = 'none';
+
+        });
+
+
+        btnConfirmarLogout.addEventListener('click', function () {
+
+            boxPreguntaLogout.style.display = 'none';
+
+            boxCargandoLogout.style.display = 'block';
+
+            let seg = 5;
+
+            txtSegundosLogout.textContent = seg;
+
+
+            const timer = setInterval(function () {
+
+                seg--;
+
+                txtSegundosLogout.textContent = seg;
+
+                if (seg <= 0) {
+
+                    clearInterval(timer);
+
+                    window.location.href =
+                        "/lessasv/controllers/AuthController.php?accion=logout";
+
+                }
+
+            }, 1000);
+
+        });
+
+    </script>
 
 </body>
 

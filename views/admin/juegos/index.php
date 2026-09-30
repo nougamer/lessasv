@@ -3,121 +3,246 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Gestionar juegos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Juegos - LESSA SV</title>
+    <link rel="stylesheet" href="../assets/css/juegos.css">
 </head>
 
 <body>
 
-    <h1>Gestionar juegos</h1>
+    <!-- BARRA LATERAL (SIDEBAR) -->
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icono">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+                <strong>LESSA SV</strong>
+                <span>Administrador</span>
+            </div>
+        </div>
 
-    <a href="/lessasv/controllers/DashboardController.php">
-        Volver al panel
-    </a>
+        <nav style="display:flex; flex-direction:column; gap:4px;">
+            <a href="/lessasv/controllers/DashboardController.php" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+                <span>Inicio</span>
+            </a>
+            <a href="/lessasv/controllers/ModuloController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+                <span>Módulos</span>
+            </a>
+            <a href="/lessasv/controllers/CategoriaController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                <span>Categorías</span>
+            </a>
+            <a href="/lessasv/controllers/LeccionController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                <span>Lecciones</span>
+            </a>
+            <a href="/lessasv/controllers/UsuarioController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Usuarios</span>
+            </a>
+            <a href="/lessasv/controllers/EvaluacionController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <span>Evaluaciones</span>
+            </a>
+            <a href="/lessasv/controllers/JuegoController.php?accion=listar" class="nav-item activo">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg>
+                <span>Juegos</span>
+            </a>
+        </nav>
 
-    <br><br>
+        <div class="abajo">
+            <a href="#" class="salir" id="btnAbrirLogout">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                <span>Cerrar sesión</span>
+            </a>
+        </div>
+    </aside>
 
-    <a href="/lessasv/controllers/JuegoController.php?accion=crear">
-        Agregar juego
-    </a>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenido">
 
-    <br><br>
+        <!-- ENCABEZADO -->
+        <div class="page-header">
+            <div>
+                <h1>Gestionar Juegos</h1>
+                <p>Crea y administra las actividades interactivas de la plataforma</p>
+            </div>
+            <a href="/lessasv/controllers/JuegoController.php?accion=crear" class="btn-crear">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>Agregar juego</span>
+            </a>
+        </div>
 
-    <?php if (count($juegos) > 0) { ?>
+        <!-- CUADRÍCULA / TARJETAS EN LUGAR DE TABLA -->
+        <div class="grid-juegos">
+            <?php if (!empty($juegos) && count($juegos) > 0) { ?>
+                <?php foreach ($juegos as$juego) { ?>
+                    
+                    <?php 
+                        // Determinar ruta según el tipo de juego
+                        $urlContenido = ($juego['tipo'] === 'relacionar') 
+                            ? "/lessasv/controllers/JuegoParejaController.php?accion=listar&id_juego=" . $juego['id_juego']
+                            : "/lessasv/controllers/JuegoPreguntaController.php?accion=listar&id_juego=" . $juego['id_juego'];
+                        
+                        $claseTipo = ($juego['tipo'] === 'relacionar') ? 'relacionar' : '';
+                    ?>
 
-        <table border="1">
+                    <div class="juego-card">
+                        <div class="juego-card-top">
+                            <div class="juego-header-meta">
+                                <span class="badge-id">#<?php echo $juego['id_juego']; ?></span>
+                                <span class="badge-tipo <?php echo $claseTipo; ?>">
+                                    <?php echo htmlspecialchars($juego['tipo']); ?>
+                                </span>
+                            </div>
 
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Tipo</th>
-                <th>Acciones</th>
-            </tr>
+                            <h3 class="juego-titulo">
+                                <?php echo htmlspecialchars($juego['nombre']); ?>
+                            </h3>
 
-            <?php foreach ($juegos as $juego) { ?>
+                            <p class="juego-descripcion">
+                                <?php echo htmlspecialchars($juego['descripcion'] ?? 'Sin descripción disponible.'); ?>
+                            </p>
+                        </div>
 
-                <tr>
-
-                    <td>
-                        <?php echo $juego['id_juego']; ?>
-                    </td>
-
-                    <td>
-                        <?php
-                        echo htmlspecialchars(
-                            $juego['nombre']
-                        );
-                        ?>
-                    </td>
-
-                    <td>
-                        <?php
-                        echo htmlspecialchars(
-                            $juego['descripcion'] ?? ''
-                        );
-                        ?>
-                    </td>
-
-                    <td>
-                        <?php
-                        echo htmlspecialchars(
-                            $juego['tipo']
-                        );
-                        ?>
-                    </td>
-
-                    <td>
-
-                        <?php if ($juego['tipo'] === 'relacionar') { ?>
-
-                            <a
-                                href="/lessasv/controllers/JuegoParejaController.php?accion=listar&id_juego=<?php echo $juego['id_juego']; ?>"
-                            >
-                                Gestionar contenido
+                        <div class="juego-acciones">
+                            <a href="<?php echo $urlContenido; ?>" class="btn-gestionar-contenido">
+                                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                                Contenido
                             </a>
 
-                        <?php } else { ?>
+                            <div class="grupo-botones-card">
+                                <a 
+                                    href="/lessasv/controllers/JuegoController.php?accion=editar&id=<?php echo $juego['id_juego']; ?>" 
+                                    class="btn-card-editar"
+                                >
+                                    Editar
+                                </a>
 
-                            <a
-                                href="/lessasv/controllers/JuegoPreguntaController.php?accion=listar&id_juego=<?php echo $juego['id_juego']; ?>"
-                            >
-                                Gestionar contenido
-                            </a>
+                                <button 
+                                    type="button" 
+                                    class="btn-card-eliminar btnAbrirEliminar"
+                                    data-id="<?php echo $juego['id_juego']; ?>"
+                                    data-nombre="<?php echo htmlspecialchars($juego['nombre']); ?>"
+                                >
+                                    Eliminar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-                        <?php } ?>
-
-                        |
-
-                        <a
-                            href="/lessasv/controllers/JuegoController.php?accion=editar&id=<?php echo $juego['id_juego']; ?>"
-                        >
-                            Editar
-                        </a>
-
-                        |
-
-                        <a
-                            href="/lessasv/controllers/JuegoController.php?accion=eliminar&id=<?php echo $juego['id_juego']; ?>"
-                            onclick="return confirm('¿Seguro que deseas eliminar este juego?');"
-                        >
-                            Eliminar
-                        </a>
-
-                    </td>
-
-                </tr>
-
+                <?php } ?>
+            <?php } else { ?>
+                <div class="grid-vacio">
+                    Todavía no existen juegos registrados en el sistema.
+                </div>
             <?php } ?>
+        </div>
 
-        </table>
+    </main>
 
-    <?php } else { ?>
+    <!-- MODAL CONFIRMAR ELIMINACIÓN -->
+    <div id="modalEliminar" class="modal-overlay" style="display: none;">
+        <div class="modal-box">
+            <div class="modal-icono-danger">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+            </div>
+            <h3>¿Eliminar juego?</h3>
+            <p>Estás a punto de eliminar el juego <strong id="txtNombreJuego"></strong>. Esta acción borrará su contenido asociado.</p>
+            <div class="modal-acciones">
+                <button type="button" class="btn-secundario" id="btnCancelarEliminar">Cancelar</button>
+                <a href="#" id="btnConfirmarEliminar" class="btn-danger">Sí, eliminar</a>
+            </div>
+        </div>
+    </div>
 
-        <p>
-            Todavía no existen juegos.
-        </p>
+    <!-- MODAL LOGOUT -->
+    <div id="modalLogout" class="modal-overlay" style="display: none;">
+        <div class="modal-box">
+            <div id="boxPreguntaLogout">
+                <div class="modal-icono-danger">
+                    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                </div>
+                <h3>¿Cerrar sesión?</h3>
+                <p>¿Estás seguro de que deseas salir del Panel Administrador?</p>
+                <div class="modal-acciones">
+                    <button type="button" class="btn-secundario" id="btnCancelarLogout">Cancelar</button>
+                    <button type="button" class="btn-danger" id="btnConfirmarLogout">Sí, salir</button>
+                </div>
+            </div>
 
-    <?php } ?>
+            <div id="boxCargandoLogout" style="display: none;">
+                <div class="rueda-spinner"></div>
+                <h3>Cerrando sesión...</h3>
+                <p>Redirigiendo en <strong id="txtSegundosLogout">5</strong> segundos.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Modal de Eliminar Juego
+        const modalEliminar = document.getElementById('modalEliminar');
+        const txtNombreJuego = document.getElementById('txtNombreJuego');
+        const btnConfirmarEliminar = document.getElementById('btnConfirmarEliminar');
+        const btnCancelarEliminar = document.getElementById('btnCancelarEliminar');
+
+        document.querySelectorAll('.btnAbrirEliminar').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const id = btn.getAttribute('data-id');
+                const nombre = btn.getAttribute('data-nombre');
+                
+                txtNombreJuego.textContent = `"${nombre}"`;
+                btnConfirmarEliminar.href = `/lessasv/controllers/JuegoController.php?accion=eliminar&id=${id}`;
+                modalEliminar.style.display = 'flex';
+            });
+        });
+
+        btnCancelarEliminar.addEventListener('click', () => {
+            modalEliminar.style.display = 'none';
+        });
+
+        // Modal de Logout
+        const btnAbrirLogout = document.getElementById('btnAbrirLogout');
+        const btnCancelarLogout = document.getElementById('btnCancelarLogout');
+        const btnConfirmarLogout = document.getElementById('btnConfirmarLogout');
+        const modalLogout = document.getElementById('modalLogout');
+        const boxPreguntaLogout = document.getElementById('boxPreguntaLogout');
+        const boxCargandoLogout = document.getElementById('boxCargandoLogout');
+        const txtSegundosLogout = document.getElementById('txtSegundosLogout');
+
+        btnAbrirLogout.addEventListener('click', (e) => {
+            e.preventDefault();
+            boxPreguntaLogout.style.display = 'block';
+            boxCargandoLogout.style.display = 'none';
+            modalLogout.style.display = 'flex';
+        });
+
+        btnCancelarLogout.addEventListener('click', () => {
+            modalLogout.style.display = 'none';
+        });
+
+        btnConfirmarLogout.addEventListener('click', () => {
+            boxPreguntaLogout.style.display = 'none';
+            boxCargandoLogout.style.display = 'block';
+
+            let seg = 5;
+            txtSegundosLogout.textContent = seg;
+
+            const timer = setInterval(() => {
+                seg--;
+                txtSegundosLogout.textContent = seg;
+
+                if (seg <= 0) {
+                    clearInterval(timer);
+                    window.location.href = "/lessasv/controllers/AuthController.php?accion=logout";
+                }
+            }, 1000);
+        });
+    </script>
 
 </body>
 

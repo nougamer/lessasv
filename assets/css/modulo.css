@@ -1,0 +1,466 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: #0a0a0a;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+}
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+.sidebar {
+    width: 240px;
+    background: linear-gradient(180deg, #0d1326, #05070d);
+    border-right: 1px solid #1c2440;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 14px;
+    gap: 16px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 8px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo .logo-icono {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    background: #0052ff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 14px rgba(0, 82, 255, .5);
+}
+
+.logo strong {
+    display: block;
+    font-size: 15px;
+    color: #fff;
+}
+
+.logo span {
+    font-size: 11px;
+    color: rgba(255, 255, 255, .45);
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, .7);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+    transition: background .15s, color .15s;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, .06);
+    color: #fff;
+}
+
+.nav-item.activo {
+    background: #0052ff;
+    color: #fff;
+    font-weight: 700;
+    border-left-color: #fff;
+    box-shadow: 0 4px 14px rgba(0, 82, 255, .35);
+}
+
+.sidebar .abajo {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.salir {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    color: #ff5252;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 82, 82, 0.08);
+    transition: all 0.2s;
+}
+
+.salir:hover {
+    background: #ff5252;
+    color: #fff;
+}
+
+/* --- ÁREA PRINCIPAL --- */
+.contenido {
+    margin-left: 240px;
+    flex: 1;
+    padding: 32px 40px;
+    background: radial-gradient(circle at top left, #0d1326 0%, #08090a 55%);
+    min-height: 100vh;
+}
+
+.panel {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* --- ENCABEZADO Y PERFIL --- */
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.encabezado h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.encabezado p {
+    color: #888;
+    font-size: 13.5px;
+    margin-top: 4px;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #131313;
+    padding: 8px 14px;
+    border-radius: 12px;
+    border: 1px solid #262626;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #0052ff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.perfil .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil .info strong {
+    font-size: 13px;
+}
+
+.perfil .info span {
+    font-size: 11px;
+    color: #888;
+}
+
+/* --- RESUMEN DE TARJETAS --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.stat-box {
+    background: #131313;
+    border: 1px solid #262626;
+    padding: 18px 20px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-box .label {
+    font-size: 12px;
+    color: #888;
+    font-weight: 600;
+}
+
+.stat-box .valor {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* --- BARRA Y BOTÓN PRINCIPAL DE AGREGAR --- */
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.btn-crear {
+    background: linear-gradient(135deg, #0052ff 0%, #003ebd 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 11px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(0, 82, 255, 0.35);
+    transition: all 0.25s ease;
+}
+
+.btn-crear .icon-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-crear:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 82, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- TABLA --- */
+.tabla-contenedor {
+    background: #131313;
+    border: 1px solid #262626;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.tabla-custom {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-custom th {
+    background: #1a1a1a;
+    padding: 14px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #262626;
+}
+
+.tabla-custom td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #202020;
+    font-size: 13.5px;
+    vertical-align: middle;
+}
+
+.tabla-custom tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.tag-id {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #aaa;
+    font-family: monospace;
+}
+
+.modulo-nombre {
+    color: #fff;
+    font-weight: 600;
+}
+
+.sin-datos {
+    padding: 30px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+/* --- BOTONES DE ACCIÓN (EDITAR Y ELIMINAR IDÉNTICOS) --- */
+.acciones-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-accion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 32px;
+    box-sizing: border-box;
+}
+
+/* EDITAR */
+.btn-editar {
+    background: rgba(0, 82, 255, 0.12);
+    color: #3b82f6;
+    border: 1px solid rgba(0, 82, 255, 0.3);
+}
+
+.btn-editar:hover {
+    background: #0052ff;
+    color: #fff;
+    border-color: #0052ff;
+}
+
+/* ELIMINAR (MISMO FORMATO EN ROJO) */
+.btn-eliminar {
+    background: rgba(255, 82, 82, 0.12);
+    color: #ff5252;
+    border: 1px solid rgba(255, 82, 82, 0.3);
+}
+
+.btn-eliminar:hover {
+    background: #ff5252;
+    color: #fff;
+    border-color: #ff5252;
+}
+
+/* --- MODALES FLOTANTES (ELIMINAR Y LOGOUT) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-box {
+    background: #131313;
+    border: 1px solid #262626;
+    border-radius: 18px;
+    width: 90%;
+    max-width: 380px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    animation: popIn 0.2s ease-out;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-icono-danger {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: rgba(255, 82, 82, 0.15);
+    color: #ff5252;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px auto;
+}
+
+.modal-box h3 {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.modal-box p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.modal-acciones {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-secundario, .btn-danger {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.btn-secundario {
+    background: #262626;
+    color: #ccc;
+}
+
+.btn-secundario:hover {
+    background: #333;
+    color: #fff;
+}
+
+.btn-danger {
+    background: #ff5252;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #ff3333;
+}
+
+/* SPINNER CARGANDO */
+.rueda-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #0052ff;
+    border-radius: 50%;
+    animation: girar 0.8s linear infinite;
+    margin: 10px auto 20px auto;
+}
+
+@keyframes girar {
+    to { transform: rotate(360deg); }
+}

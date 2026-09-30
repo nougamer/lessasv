@@ -2,7 +2,7 @@
 
 $host = "localhost";
 $puerto = "5432";
-$basedatos = "lessa_sv";
+$basedatos = "lessa_svv";
 $usuario = "postgres";
 $contrasena = "404547455";
 

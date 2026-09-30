@@ -3,218 +3,249 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Editar contenido</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar pareja - LESSA SV</title>
+    <link rel="stylesheet" href="../assets/css/crear.css">
 </head>
 
 <body>
 
-    <h1>
-        Editar contenido
-    </h1>
+    <aside class="sidebar">
 
-    <h2>
-        <?php echo htmlspecialchars($juego['nombre']); ?>
-    </h2>
+        <div class="logo">
+            <h2>LESSA SV</h2>
+            <span>Administrador</span>
+        </div>
 
-    <p>
-        Tipo:
-        <strong>
-            <?php echo htmlspecialchars($juego['tipo']); ?>
-        </strong>
-    </p>
+        <nav>
 
-    <a
-        href="/lessasv/controllers/JuegoPreguntaController.php?accion=listar&id_juego=<?php echo $juego['id_juego']; ?>"
-    >
-        Volver
-    </a>
+            <a href="/lessasv/controllers/InicioController.php?accion=index" class="nav-item">
+                <span>Inicio</span>
+            </a>
 
-    <br><br>
+            <a href="/lessasv/controllers/ModuloController.php?accion=listar" class="nav-item">
+                <span>Módulos</span>
+            </a>
 
-    <form
-        method="POST"
-        enctype="multipart/form-data"
-    >
+            <a href="/lessasv/controllers/CategoriaController.php?accion=listar" class="nav-item">
+                <span>Categorías</span>
+            </a>
 
-        <label>
-            Pregunta o instrucción:
-        </label>
+            <a href="/lessasv/controllers/LeccionController.php?accion=listar" class="nav-item">
+                <span>Lecciones</span>
+            </a>
 
-        <br>
+            <a href="/lessasv/controllers/UsuarioController.php?accion=listar" class="nav-item">
+                <span>Usuarios</span>
+            </a>
 
-        <input
-            type="text"
-            name="pregunta"
-            value="<?php echo htmlspecialchars($contenido['pregunta']); ?>"
-            required
-        >
+            <a href="/lessasv/controllers/EvaluacionController.php?accion=listar" class="nav-item">
+                <span>Evaluaciones</span>
+            </a>
 
-        <br><br>
+            <a href="/lessasv/controllers/JuegoController.php?accion=listar" class="nav-item activo">
+                <span>Juegos</span>
+            </a>
+
+        </nav>
+
+        <a href="#" id="btnAbrirLogout" class="nav-item logout">
+            <span>Cerrar sesión</span>
+        </a>
+
+    </aside>
 
 
-        <?php if (!empty($contenido['imagen'])): ?>
+    <main class="contenido">
 
-            <p>Imagen actual:</p>
+        <div class="form-card">
 
-            <img
-                src="/lessasv/<?php echo htmlspecialchars($contenido['imagen']); ?>"
-                alt="Imagen actual"
-                width="150"
+            <div class="form-header">
+
+                <div class="form-header-left">
+
+                    <div class="form-header-icon">
+                        🧩
+                    </div>
+
+                    <div class="form-header-text">
+
+                        <h2>Agregar pareja</h2>
+
+                        <p>
+                            Juego:
+                            <strong>
+                                <?php echo htmlspecialchars($juego['nombre']); ?>
+                            </strong>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <form
+                method="POST"
+                enctype="multipart/form-data"
+                class="form-body"
             >
 
-            <br><br>
+                <?php if (!empty($error)) { ?>
 
-        <?php endif; ?>
+                    <div class="mensaje-error">
+                        <?php echo htmlspecialchars($error); ?>
+                    </div>
 
-
-        <label>
-            Cambiar imagen:
-        </label>
-
-        <br>
-
-        <input
-            type="file"
-            name="imagen"
-            accept="image/jpeg,image/png,image/webp"
-        >
-
-        <p>
-            Si no seleccionas una imagen nueva,
-            se conservará la actual.
-        </p>
+                <?php } ?>
 
 
-        <?php if ($juego['tipo'] !== 'completar'): ?>
+                <div class="form-group">
 
-            <label>Opción A:</label>
-            <br>
+                    <label>Palabra o texto:</label>
 
-            <input
-                type="text"
-                name="opcion_a"
-                value="<?php echo htmlspecialchars($contenido['opcion_a'] ?? ''); ?>"
-            >
+                    <input
+                        type="text"
+                        name="texto"
+                        required
+                    >
 
-            <br><br>
-
-
-            <label>Opción B:</label>
-            <br>
-
-            <input
-                type="text"
-                name="opcion_b"
-                value="<?php echo htmlspecialchars($contenido['opcion_b'] ?? ''); ?>"
-            >
-
-            <br><br>
+                </div>
 
 
-            <label>Opción C:</label>
-            <br>
+                <div class="form-group">
 
-            <input
-                type="text"
-                name="opcion_c"
-                value="<?php echo htmlspecialchars($contenido['opcion_c'] ?? ''); ?>"
-            >
+                    <label>Imagen de la seña:</label>
 
-            <br><br>
+                    <input
+                        type="file"
+                        name="imagen"
+                        accept="image/jpeg,image/png,image/webp"
+                        required
+                    >
 
-
-            <label>Opción D:</label>
-            <br>
-
-            <input
-                type="text"
-                name="opcion_d"
-                value="<?php echo htmlspecialchars($contenido['opcion_d'] ?? ''); ?>"
-            >
-
-            <br><br>
-
-        <?php endif; ?>
+                </div>
 
 
-        <label>
-            Respuesta correcta:
-        </label>
+                <div class="form-actions">
 
-        <br>
+                    <a
+                        href="/lessasv/controllers/JuegoParejaController.php?accion=listar&id_juego=<?php echo $juego['id_juego']; ?>"
+                        class="btn-cancelar"
+                    >
+                        Cancelar
+                    </a>
+
+                    <button type="submit" class="btn-crear">
+                        Guardar pareja
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
 
 
-        <?php if ($juego['tipo'] === 'completar'): ?>
+    <div id="modalLogout" class="modal">
 
-            <input
-                type="text"
-                name="respuesta_correcta"
-                value="<?php echo htmlspecialchars($contenido['respuesta_correcta']); ?>"
-                required
-            >
+        <div class="modal-box" id="boxPreguntaLogout">
 
-        <?php else: ?>
+            <div class="modal-icon">⚠</div>
 
-            <select
-                name="respuesta_correcta"
-                required
-            >
+            <h3>¿Cerrar sesión?</h3>
 
-                <option
-                    value="A"
-                    <?php
-                    if ($contenido['respuesta_correcta'] === 'A') {
-                        echo 'selected';
-                    }
-                    ?>
-                >
-                    A
-                </option>
+            <p>
+                ¿Estás seguro de que deseas cerrar tu sesión?
+            </p>
 
-                <option
-                    value="B"
-                    <?php
-                    if ($contenido['respuesta_correcta'] === 'B') {
-                        echo 'selected';
-                    }
-                    ?>
-                >
-                    B
-                </option>
+            <div class="modal-actions">
 
-                <option
-                    value="C"
-                    <?php
-                    if ($contenido['respuesta_correcta'] === 'C') {
-                        echo 'selected';
-                    }
-                    ?>
-                >
-                    C
-                </option>
+                <button type="button" id="btnCancelarLogout" class="btn-cancelar">
+                    Cancelar
+                </button>
 
-                <option
-                    value="D"
-                    <?php
-                    if ($contenido['respuesta_correcta'] === 'D') {
-                        echo 'selected';
-                    }
-                    ?>
-                >
-                    D
-                </option>
+                <button type="button" id="btnConfirmarLogout" class="btn-confirmar">
+                    Cerrar sesión
+                </button>
 
-            </select>
+            </div>
 
-        <?php endif; ?>
+        </div>
 
-        <br><br>
 
-        <button type="submit">
-            Guardar cambios
-        </button>
+        <div class="modal-box" id="boxCargandoLogout" style="display:none;">
 
-    </form>
+            <div class="spinner"></div>
+
+            <h3>Cerrando sesión...</h3>
+
+            <p>
+                Serás redirigido en
+                <span id="contadorLogout">3</span>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const btnAbrirLogout = document.getElementById("btnAbrirLogout");
+        const modalLogout = document.getElementById("modalLogout");
+        const btnCancelarLogout = document.getElementById("btnCancelarLogout");
+        const btnConfirmarLogout = document.getElementById("btnConfirmarLogout");
+        const boxPreguntaLogout = document.getElementById("boxPreguntaLogout");
+        const boxCargandoLogout = document.getElementById("boxCargandoLogout");
+        const contadorLogout = document.getElementById("contadorLogout");
+
+        btnAbrirLogout.addEventListener("click", function (e) {
+
+            e.preventDefault();
+
+            modalLogout.style.display = "flex";
+
+        });
+
+        btnCancelarLogout.addEventListener("click", function () {
+
+            modalLogout.style.display = "none";
+
+        });
+
+        btnConfirmarLogout.addEventListener("click", function () {
+
+            boxPreguntaLogout.style.display = "none";
+            boxCargandoLogout.style.display = "block";
+
+            let contador = 3;
+
+            contadorLogout.textContent = contador;
+
+            const intervalo = setInterval(function () {
+
+                contador--;
+
+                contadorLogout.textContent = contador;
+
+                if (contador <= 0) {
+
+                    clearInterval(intervalo);
+
+                    window.location.href =
+                        "/lessasv/controllers/AuthController.php?accion=logout";
+
+                }
+
+            }, 1000);
+
+        });
+
+    </script>
 
 </body>
 

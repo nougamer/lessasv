@@ -13,7 +13,7 @@ body {
 }
 
 
-/* --- BARRA LATERAL --- */
+/* SIDEBAR */
 
 .sidebar {
     width: 240px;
@@ -92,7 +92,7 @@ body {
 .sidebar .abajo {
     margin-top: auto;
     padding-top: 14px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, .08);
 }
 
 .salir {
@@ -106,8 +106,8 @@ body {
     font-weight: 600;
     padding: 10px;
     border-radius: 8px;
-    background: rgba(255, 82, 82, 0.08);
-    transition: all 0.2s;
+    background: rgba(255, 82, 82, .08);
+    transition: all .2s;
 }
 
 .salir:hover {
@@ -116,18 +116,22 @@ body {
 }
 
 
-/* --- ÁREA PRINCIPAL --- */
+/* CONTENIDO */
 
 .contenido {
     margin-left: 240px;
     flex: 1;
     padding: 40px;
-    background: radial-gradient(circle at top left, #0d1326 0%, #08090a 55%);
+    background: radial-gradient(
+        circle at top left,
+        #0d1326 0%,
+        #08090a 55%
+    );
     min-height: 100vh;
 }
 
 
-/* --- CABECERA --- */
+/* ENCABEZADO */
 
 .page-header {
     display: flex;
@@ -135,7 +139,7 @@ body {
     justify-content: space-between;
     margin-bottom: 22px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
     gap: 20px;
 }
 
@@ -149,8 +153,8 @@ body {
     width: 48px;
     height: 48px;
     border-radius: 13px;
-    background: rgba(0, 82, 255, 0.12);
-    border: 1px solid rgba(0, 82, 255, 0.3);
+    background: rgba(0, 82, 255, .12);
+    border: 1px solid rgba(0, 82, 255, .3);
     color: #38bdf8;
     display: flex;
     align-items: center;
@@ -173,14 +177,20 @@ body {
     color: #ccc;
 }
 
+
+/* BOTONES DEL HEADER */
+
 .acciones-header {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-
-/* --- BOTÓN VOLVER --- */
+.header-acciones {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
 .btn-volver {
     display: inline-flex;
@@ -194,7 +204,7 @@ body {
     font-size: 13px;
     font-weight: 600;
     border: 1px solid #292e3a;
-    transition: all 0.2s ease;
+    transition: all .2s ease;
 }
 
 .btn-volver:hover {
@@ -202,38 +212,39 @@ body {
     color: #fff;
 }
 
-
-/* --- BOTÓN CREAR --- */
-
 .btn-crear {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: linear-gradient(135deg, #0052ff 0%, #003ebd 100%);
+    background: linear-gradient(
+        135deg,
+        #0052ff 0%,
+        #003ebd 100%
+    );
     color: #fff;
     text-decoration: none;
     padding: 12px 18px;
     border-radius: 12px;
     font-size: 14px;
     font-weight: 600;
-    box-shadow: 0 4px 16px rgba(0, 82, 255, 0.35);
-    transition: all 0.2s ease;
+    box-shadow: 0 4px 16px rgba(0, 82, 255, .35);
+    transition: all .2s ease;
     white-space: nowrap;
 }
 
 .btn-crear:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 22px rgba(0, 82, 255, 0.5);
+    box-shadow: 0 6px 22px rgba(0, 82, 255, .5);
 }
 
 
-/* --- INFORMACIÓN DEL JUEGO --- */
+/* INFORMACIÓN DEL JUEGO */
 
 .info-juego {
     display: flex;
     align-items: center;
     gap: 12px;
-    background: rgba(18, 20, 26, 0.8);
+    background: rgba(18, 20, 26, .8);
     border: 1px solid #222736;
     border-radius: 14px;
     padding: 14px 18px;
@@ -262,7 +273,7 @@ body {
 }
 
 
-/* --- GRID DE CONTENIDOS --- */
+/* GRID DE CONTENIDOS */
 
 .grid-contenidos {
     display: grid;
@@ -271,27 +282,27 @@ body {
 }
 
 
-/* --- TARJETA DE CONTENIDO --- */
+/* TARJETA */
 
 .contenido-card {
-    background: rgba(18, 20, 26, 0.9);
+    background: rgba(18, 20, 26, .9);
     border: 1px solid #222736;
     border-radius: 18px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: all 0.25s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: all .25s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
 }
 
 .contenido-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(0, 82, 255, 0.4);
-    box-shadow: 0 12px 36px rgba(0, 82, 255, 0.15);
+    border-color: rgba(0, 82, 255, .4);
+    box-shadow: 0 12px 36px rgba(0, 82, 255, .15);
 }
 
 
-/* --- IMAGEN --- */
+/* IMAGEN */
 
 .contenido-imagen {
     width: 100%;
@@ -309,34 +320,38 @@ body {
     height: 100%;
     object-fit: contain;
     padding: 14px;
-    transition: transform 0.25s ease;
+    transition: transform .25s ease;
 }
 
 .contenido-card:hover .contenido-imagen img {
     transform: scale(1.04);
 }
 
+
+/* SIN IMAGEN */
+
 .sin-imagen {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     color: #64748b;
-}
-
-.sin-imagen span {
     font-size: 12px;
 }
 
 
-/* --- CONTENIDO DE TARJETA --- */
+/* CONTENIDO DE TARJETA */
 
-.contenido-cuerpo {
+.contenido-contenido {
     padding: 18px;
     display: flex;
     flex-direction: column;
     flex: 1;
 }
+
+
+/* META */
 
 .contenido-meta {
     display: flex;
@@ -351,7 +366,7 @@ body {
     font-family: monospace;
     font-size: 12px;
     font-weight: 600;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, .05);
     padding: 4px 8px;
     border-radius: 6px;
 }
@@ -363,53 +378,58 @@ body {
     letter-spacing: .5px;
     padding: 4px 9px;
     border-radius: 20px;
-    background: rgba(0, 82, 255, 0.12);
+    background: rgba(0, 82, 255, .12);
     color: #60a5fa;
-    border: 1px solid rgba(0, 82, 255, 0.3);
+    border: 1px solid rgba(0, 82, 255, .3);
 }
 
-.contenido-cuerpo h2 {
+
+/* PREGUNTA */
+
+.contenido-pregunta {
     font-size: 18px;
     font-weight: 700;
     color: #fff;
     line-height: 1.35;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     word-break: break-word;
 }
 
 
-/* --- RESPUESTA CORRECTA --- */
+/* RESPUESTA */
 
 .respuesta {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid #222736;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(255, 255, 255, .06);
     border-radius: 9px;
-    padding: 11px;
+    padding: 10px 12px;
     margin-bottom: 18px;
 }
 
 .respuesta span {
-    display: block;
     color: #64748b;
     font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: .4px;
+    letter-spacing: .5px;
     font-weight: 700;
-    margin-bottom: 5px;
 }
 
 .respuesta strong {
-    color: #fff;
-    font-size: 14px;
+    color: #60a5fa;
+    font-size: 13px;
+    word-break: break-word;
 }
 
 
-/* --- ACCIONES --- */
+/* ACCIONES DE TARJETA */
 
 .contenido-acciones {
     margin-top: auto;
     padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, .06);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -427,14 +447,13 @@ body {
     text-decoration: none;
     padding: 9px 10px;
     border-radius: 9px;
-    background: rgba(245, 158, 11, 0.08);
-    border: 1px solid rgba(245, 158, 11, 0.18);
-    transition: all 0.2s ease;
+    background: rgba(245, 158, 11, .08);
+    border: 1px solid rgba(245, 158, 11, .18);
+    transition: all .2s ease;
 }
 
 .btn-card-editar:hover {
-    background: rgba(245, 158, 11, 0.18);
-    border-color: rgba(245, 158, 11, 0.35);
+    background: rgba(245, 158, 11, .15);
 }
 
 .btn-card-eliminar {
@@ -449,21 +468,20 @@ body {
     text-decoration: none;
     padding: 9px 10px;
     border-radius: 9px;
-    background: rgba(255, 82, 82, 0.08);
-    border: 1px solid rgba(255, 82, 82, 0.18);
-    transition: all 0.2s ease;
+    background: rgba(255, 82, 82, .08);
+    border: 1px solid rgba(255, 82, 82, .18);
+    transition: all .2s ease;
 }
 
 .btn-card-eliminar:hover {
-    background: rgba(255, 82, 82, 0.18);
-    border-color: rgba(255, 82, 82, 0.35);
+    background: rgba(255, 82, 82, .15);
 }
 
 
-/* --- ESTADO VACÍO --- */
+/* ESTADO VACÍO */
 
 .grid-vacio {
-    background: rgba(18, 20, 26, 0.8);
+    background: rgba(18, 20, 26, .8);
     border: 1px solid #222736;
     border-radius: 18px;
     padding: 60px 20px;
@@ -476,8 +494,8 @@ body {
     height: 66px;
     margin: 0 auto 16px;
     border-radius: 50%;
-    background: rgba(0, 82, 255, 0.08);
-    border: 1px solid rgba(0, 82, 255, 0.2);
+    background: rgba(0, 82, 255, .08);
+    border: 1px solid rgba(0, 82, 255, .2);
     color: #60a5fa;
     display: flex;
     align-items: center;
@@ -507,16 +525,15 @@ body {
     border-radius: 9px;
     font-size: 13px;
     font-weight: 600;
-    transition: all 0.2s ease;
+    transition: all .2s ease;
 }
 
 .btn-crear-vacio:hover {
     background: #003ebd;
-    transform: translateY(-1px);
 }
 
 
-/* --- MODAL CERRAR SESIÓN --- */
+/* MODAL */
 
 .modal-overlay {
     position: fixed;
@@ -524,7 +541,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, .75);
     backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
@@ -540,14 +557,14 @@ body {
     max-width: 380px;
     padding: 28px 24px;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .6);
 }
 
 .modal-icono-danger {
     width: 54px;
     height: 54px;
     border-radius: 50%;
-    background: rgba(255, 82, 82, 0.15);
+    background: rgba(255, 82, 82, .15);
     color: #ff5252;
     display: flex;
     align-items: center;
@@ -589,11 +606,6 @@ body {
     color: #ccc;
 }
 
-.btn-secundario:hover {
-    background: #333;
-    color: #fff;
-}
-
 .btn-danger {
     flex: 1;
     padding: 10px;
@@ -606,20 +618,13 @@ body {
     color: #fff;
 }
 
-.btn-danger:hover {
-    background: #e03e3e;
-}
-
-
-/* --- SPINNER --- */
-
 .rueda-spinner {
     width: 40px;
     height: 40px;
-    border: 3px solid rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, .1);
     border-top-color: #0052ff;
     border-radius: 50%;
-    animation: girar 0.8s linear infinite;
+    animation: girar .8s linear infinite;
     margin: 10px auto 20px auto;
 }
 
@@ -630,7 +635,7 @@ body {
 }
 
 
-/* --- RESPONSIVE --- */
+/* RESPONSIVE */
 
 @media (max-width: 800px) {
 
@@ -644,7 +649,8 @@ body {
         flex-direction: column;
     }
 
-    .acciones-header {
+    .acciones-header,
+    .header-acciones {
         width: 100%;
     }
 
@@ -655,7 +661,10 @@ body {
     }
 
     .grid-contenidos {
-        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(230px, 1fr)
+        );
     }
 
 }

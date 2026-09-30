@@ -13,45 +13,98 @@
     <aside class="sidebar">
 
         <div class="logo">
-            <h2>LESSA SV</h2>
-            <span>Administrador</span>
+            <div class="logo-icono">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+
+            <div>
+                <strong>LESSA SV</strong>
+                <span>Administrador</span>
+            </div>
         </div>
 
-        <nav>
+        <nav style="display:flex; flex-direction:column; gap:4px;">
 
-            <a href="/lessasv/controllers/InicioController.php?accion=index">
-                🏠 Inicio
+            <a href="/lessasv/controllers/InicioController.php?accion=index" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="7" height="9"/>
+                    <rect x="14" y="3" width="7" height="5"/>
+                    <rect x="14" y="12" width="7" height="9"/>
+                    <rect x="3" y="16" width="7" height="5"/>
+                </svg>
+                <span>Inicio</span>
             </a>
 
-            <a href="/lessasv/controllers/ModuloController.php?accion=listar">
-                📚 Módulos
+            <a href="/lessasv/controllers/ModuloController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                </svg>
+                <span>Módulos</span>
             </a>
 
-            <a href="/lessasv/controllers/CategoriaController.php?accion=listar">
-                📂 Categorías
+            <a href="/lessasv/controllers/CategoriaController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                </svg>
+                <span>Categorías</span>
             </a>
 
-            <a href="/lessasv/controllers/LeccionController.php?accion=listar">
-                📖 Lecciones
+            <a href="/lessasv/controllers/LeccionController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+                <span>Lecciones</span>
             </a>
 
-            <a href="/lessasv/controllers/UsuarioController.php?accion=listar">
-                👥 Usuarios
+            <a href="/lessasv/controllers/UsuarioController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                <span>Usuarios</span>
             </a>
 
-            <a href="/lessasv/controllers/EvaluacionController.php?accion=listar">
-                📝 Evaluaciones
+            <a href="/lessasv/controllers/EvaluacionController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+                <span>Evaluaciones</span>
             </a>
 
-            <a href="/lessasv/controllers/JuegoController.php?accion=listar" class="activo">
-                🎮 Juegos
+            <a href="/lessasv/controllers/JuegoController.php?accion=listar" class="nav-item activo">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                    <path d="M6 12h4M8 10v4"/>
+                    <path d="M15 11h.01M18 13h.01"/>
+                </svg>
+                <span>Juegos</span>
             </a>
 
         </nav>
 
-        <a href="#" class="logout" id="btnAbrirLogout">
-            🚪 Cerrar sesión
-        </a>
+        <div class="abajo">
+
+            <a href="#" class="salir" id="btnAbrirLogout">
+
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+
+                <span>Cerrar sesión</span>
+
+            </a>
+
+        </div>
 
     </aside>
 
@@ -62,17 +115,31 @@
 
             <div class="form-header">
 
-                <div class="icono">
-                    🎮
-                </div>
+                <div class="form-header-left">
 
-                <div>
-                    <h1>Agregar contenido</h1>
+                    <div class="form-header-icon">
 
-                    <p>
-                        Juego:
-                        <?php echo htmlspecialchars($juego['nombre']); ?>
-                    </p>
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <rect x="2" y="6" width="20" height="12" rx="2"/>
+                            <path d="M6 12h4M8 10v4"/>
+                            <path d="M15 11h.01M18 13h.01"/>
+                        </svg>
+
+                    </div>
+
+                    <div class="form-header-text">
+
+                        <h2>Agregar contenido</h2>
+
+                        <p>
+                            Juego:
+                            <strong>
+                                <?php echo htmlspecialchars($juego['nombre']); ?>
+                            </strong>
+                        </p>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -92,6 +159,7 @@
 
                     <input
                         type="text"
+                        class="form-control"
                         value="<?php echo htmlspecialchars($juego['tipo']); ?>"
                         readonly
                     >
@@ -139,6 +207,7 @@
                     <input
                         type="text"
                         name="pregunta"
+                        class="form-control"
                         required
                     >
 
@@ -154,6 +223,7 @@
                     <input
                         type="file"
                         name="imagen"
+                        class="form-control"
                         accept="image/jpeg,image/png,image/webp"
                     >
 
@@ -171,6 +241,7 @@
                         <input
                             type="text"
                             name="opcion_a"
+                            class="form-control"
                         >
 
                     </div>
@@ -185,6 +256,7 @@
                         <input
                             type="text"
                             name="opcion_b"
+                            class="form-control"
                         >
 
                     </div>
@@ -199,6 +271,7 @@
                         <input
                             type="text"
                             name="opcion_c"
+                            class="form-control"
                         >
 
                     </div>
@@ -213,6 +286,7 @@
                         <input
                             type="text"
                             name="opcion_d"
+                            class="form-control"
                         >
 
                     </div>
@@ -232,6 +306,7 @@
                         <input
                             type="text"
                             name="respuesta_correcta"
+                            class="form-control"
                             placeholder="Ejemplo: O"
                             required
                         >
@@ -240,6 +315,7 @@
 
                         <select
                             name="respuesta_correcta"
+                            class="form-control"
                             required
                         >
 
@@ -270,7 +346,7 @@
 
                     <button
                         type="submit"
-                        class="btn-crear"
+                        class="btn-guardar"
                     >
                         Guardar contenido
                     </button>
@@ -284,52 +360,70 @@
     </main>
 
 
-    <!-- Modal cerrar sesión -->
+    <!-- VENTANA MODAL FLOTANTE CERRAR SESIÓN -->
 
-    <div id="modalLogout" class="modal">
+    <div id="modalLogout" class="modal-overlay" style="display: none;">
 
-        <div id="boxPreguntaLogout" class="modal-box">
+        <div class="modal-box">
 
-            <h2>¿Cerrar sesión?</h2>
+            <!-- PASO 1: PREGUNTA -->
 
-            <p>
-                ¿Estás seguro de que deseas cerrar sesión?
-            </p>
+            <div id="boxPregunta">
 
-            <div class="modal-actions">
+                <div class="modal-icono-danger">
 
-                <button
-                    type="button"
-                    id="btnCancelarLogout"
-                    class="btn-cancelar"
-                >
-                    Cancelar
-                </button>
+                    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                        <polyline points="16 17 21 12 16 7"/>
+                        <line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
 
-                <button
-                    type="button"
-                    id="btnConfirmarLogout"
-                    class="btn-confirmar"
-                >
-                    Cerrar sesión
-                </button>
+                </div>
+
+                <h3>¿Cerrar sesión?</h3>
+
+                <p>
+                    ¿Estás seguro de que deseas salir del Panel Administrador?
+                </p>
+
+                <div class="modal-acciones">
+
+                    <button
+                        type="button"
+                        class="btn-secundario"
+                        id="btnCancelarLogout"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-danger"
+                        id="btnConfirmarLogout"
+                    >
+                        Sí, salir
+                    </button>
+
+                </div>
 
             </div>
 
-        </div>
 
+            <!-- PASO 2: RUEDITA 5 SEG -->
 
-        <div id="boxCargandoLogout" class="modal-box cargando">
+            <div id="boxCargando" style="display: none;">
 
-            <div class="spinner"></div>
+                <div class="rueda-spinner"></div>
 
-            <p>
-                Cerrando sesión...
-            </p>
+                <h3>Cerrando sesión...</h3>
 
-            <span id="contadorLogout">
-                3
-            </span>
+                <p>
+                    Redirigiendo en
+                    <strong id="txtSegundos">5</strong>
+                    segundos.
+                </p>
+
+            </div>
 
         </div>
 
@@ -338,69 +432,69 @@
 
     <script>
 
-        const btnAbrirLogout =
-            document.getElementById("btnAbrirLogout");
+        const btnAbrir =
+            document.getElementById('btnAbrirLogout');
 
-        const modalLogout =
-            document.getElementById("modalLogout");
+        const btnCancelar =
+            document.getElementById('btnCancelarLogout');
 
-        const boxPreguntaLogout =
-            document.getElementById("boxPreguntaLogout");
+        const btnConfirmar =
+            document.getElementById('btnConfirmarLogout');
 
-        const boxCargandoLogout =
-            document.getElementById("boxCargandoLogout");
+        const modal =
+            document.getElementById('modalLogout');
 
-        const btnCancelarLogout =
-            document.getElementById("btnCancelarLogout");
+        const boxPregunta =
+            document.getElementById('boxPregunta');
 
-        const btnConfirmarLogout =
-            document.getElementById("btnConfirmarLogout");
+        const boxCargando =
+            document.getElementById('boxCargando');
 
-        const contadorLogout =
-            document.getElementById("contadorLogout");
+        const txtSegundos =
+            document.getElementById('txtSegundos');
 
 
-        btnAbrirLogout.addEventListener("click", function (e) {
+        btnAbrir.addEventListener('click', (e) => {
 
             e.preventDefault();
 
-            modalLogout.style.display = "flex";
+            boxPregunta.style.display = 'block';
 
-            boxPreguntaLogout.style.display = "block";
+            boxCargando.style.display = 'none';
 
-            boxCargandoLogout.style.display = "none";
-
-        });
-
-
-        btnCancelarLogout.addEventListener("click", function () {
-
-            modalLogout.style.display = "none";
+            modal.style.display = 'flex';
 
         });
 
 
-        btnConfirmarLogout.addEventListener("click", function () {
+        btnCancelar.addEventListener('click', () => {
 
-            boxPreguntaLogout.style.display = "none";
+            modal.style.display = 'none';
 
-            boxCargandoLogout.style.display = "block";
-
-            let contador = 3;
-
-            contadorLogout.textContent = contador;
+        });
 
 
-            const intervalo = setInterval(function () {
+        btnConfirmar.addEventListener('click', () => {
 
-                contador--;
+            boxPregunta.style.display = 'none';
 
-                contadorLogout.textContent = contador;
+            boxCargando.style.display = 'block';
+
+            let seg = 5;
+
+            txtSegundos.textContent = seg;
 
 
-                if (contador <= 0) {
+            const timer = setInterval(() => {
 
-                    clearInterval(intervalo);
+                seg--;
+
+                txtSegundos.textContent = seg;
+
+
+                if (seg <= 0) {
+
+                    clearInterval(timer);
 
                     window.location.href =
                         "/lessasv/controllers/AuthController.php?accion=logout";

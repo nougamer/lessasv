@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar pareja - LESSA SV</title>
-    <link rel="stylesheet" href="../assets/css/crear.css">
+    <title>Editar contenido - LESSA SV</title>
+    <link rel="stylesheet" href="../assets/css/editar.css">
 </head>
 
 <body>
@@ -13,45 +13,98 @@
     <aside class="sidebar">
 
         <div class="logo">
-            <h2>LESSA SV</h2>
-            <span>Administrador</span>
+            <div class="logo-icono">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+
+            <div>
+                <strong>LESSA SV</strong>
+                <span>Administrador</span>
+            </div>
         </div>
 
-        <nav>
+        <nav style="display:flex; flex-direction:column; gap:4px;">
 
             <a href="/lessasv/controllers/InicioController.php?accion=index" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="7" height="9"/>
+                    <rect x="14" y="3" width="7" height="5"/>
+                    <rect x="14" y="12" width="7" height="9"/>
+                    <rect x="3" y="16" width="7" height="5"/>
+                </svg>
                 <span>Inicio</span>
             </a>
 
             <a href="/lessasv/controllers/ModuloController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                </svg>
                 <span>Módulos</span>
             </a>
 
             <a href="/lessasv/controllers/CategoriaController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                </svg>
                 <span>Categorías</span>
             </a>
 
             <a href="/lessasv/controllers/LeccionController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
                 <span>Lecciones</span>
             </a>
 
             <a href="/lessasv/controllers/UsuarioController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a2 2 0 0 0-2 2v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
                 <span>Usuarios</span>
             </a>
 
             <a href="/lessasv/controllers/EvaluacionController.php?accion=listar" class="nav-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
                 <span>Evaluaciones</span>
             </a>
 
             <a href="/lessasv/controllers/JuegoController.php?accion=listar" class="nav-item activo">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <rect x="2" y="6" width="20" height="12" rx="2"/>
+                    <path d="M6 12h4M8 10v4"/>
+                    <path d="M15 11h.01M18 13h.01"/>
+                </svg>
                 <span>Juegos</span>
             </a>
 
         </nav>
 
-        <a href="#" id="btnAbrirLogout" class="nav-item logout">
-            <span>Cerrar sesión</span>
-        </a>
+        <div class="abajo">
+
+            <a href="#" class="salir" id="btnAbrirLogout">
+
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+
+                <span>Cerrar sesión</span>
+
+            </a>
+
+        </div>
 
     </aside>
 
@@ -65,12 +118,17 @@
                 <div class="form-header-left">
 
                     <div class="form-header-icon">
-                        🧩
+
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M12 20h9"/>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+                        </svg>
+
                     </div>
 
                     <div class="form-header-text">
 
-                        <h2>Agregar pareja</h2>
+                        <h2>Editar contenido</h2>
 
                         <p>
                             Juego:
@@ -83,6 +141,10 @@
 
                 </div>
 
+                <span class="badge-id">
+                    ID: #<?php echo $contenido['id']; ?>
+                </span>
+
             </div>
 
 
@@ -92,23 +154,17 @@
                 class="form-body"
             >
 
-                <?php if (!empty($error)) { ?>
-
-                    <div class="mensaje-error">
-                        <?php echo htmlspecialchars($error); ?>
-                    </div>
-
-                <?php } ?>
-
-
                 <div class="form-group">
 
-                    <label>Palabra o texto:</label>
+                    <label>
+                        Tipo de juego
+                    </label>
 
                     <input
                         type="text"
-                        name="texto"
-                        required
+                        class="form-control"
+                        value="<?php echo htmlspecialchars($juego['tipo']); ?>"
+                        readonly
                     >
 
                 </div>
@@ -116,14 +172,201 @@
 
                 <div class="form-group">
 
-                    <label>Imagen de la seña:</label>
+                    <label>
+                        Pregunta o instrucción
+                    </label>
+
+                    <input
+                        type="text"
+                        name="pregunta"
+                        class="form-control"
+                        value="<?php echo htmlspecialchars($contenido['pregunta']); ?>"
+                        required
+                    >
+
+                </div>
+
+
+                <?php if (!empty($contenido['imagen'])): ?>
+
+                    <div class="form-group">
+
+                        <label>
+                            Imagen actual
+                        </label>
+
+                        <img
+                            src="/lessasv/<?php echo htmlspecialchars($contenido['imagen']); ?>"
+                            alt="Imagen actual"
+                            width="150"
+                        >
+
+                    </div>
+
+                <?php endif; ?>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Cambiar imagen
+                    </label>
 
                     <input
                         type="file"
                         name="imagen"
+                        class="form-control"
                         accept="image/jpeg,image/png,image/webp"
-                        required
                     >
+
+                    <small style="color:#888;">
+                        Si no seleccionas una imagen nueva,
+                        se conservará la actual.
+                    </small>
+
+                </div>
+
+
+                <?php if ($juego['tipo'] !== 'completar'): ?>
+
+                    <div class="form-group">
+
+                        <label>
+                            Opción A
+                        </label>
+
+                        <input
+                            type="text"
+                            name="opcion_a"
+                            class="form-control"
+                            value="<?php echo htmlspecialchars($contenido['opcion_a'] ?? ''); ?>"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Opción B
+                        </label>
+
+                        <input
+                            type="text"
+                            name="opcion_b"
+                            class="form-control"
+                            value="<?php echo htmlspecialchars($contenido['opcion_b'] ?? ''); ?>"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Opción C
+                        </label>
+
+                        <input
+                            type="text"
+                            name="opcion_c"
+                            class="form-control"
+                            value="<?php echo htmlspecialchars($contenido['opcion_c'] ?? ''); ?>"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Opción D
+                        </label>
+
+                        <input
+                            type="text"
+                            name="opcion_d"
+                            class="form-control"
+                            value="<?php echo htmlspecialchars($contenido['opcion_d'] ?? ''); ?>"
+                        >
+
+                    </div>
+
+                <?php endif; ?>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Respuesta correcta
+                    </label>
+
+
+                    <?php if ($juego['tipo'] === 'completar'): ?>
+
+                        <input
+                            type="text"
+                            name="respuesta_correcta"
+                            class="form-control"
+                            value="<?php echo htmlspecialchars($contenido['respuesta_correcta']); ?>"
+                            required
+                        >
+
+                    <?php else: ?>
+
+                        <select
+                            name="respuesta_correcta"
+                            class="form-control"
+                            required
+                        >
+
+                            <option
+                                value="A"
+                                <?php
+                                if ($contenido['respuesta_correcta'] === 'A') {
+                                    echo 'selected';
+                                }
+                                ?>
+                            >
+                                A
+                            </option>
+
+                            <option
+                                value="B"
+                                <?php
+                                if ($contenido['respuesta_correcta'] === 'B') {
+                                    echo 'selected';
+                                }
+                                ?>
+                            >
+                                B
+                            </option>
+
+                            <option
+                                value="C"
+                                <?php
+                                if ($contenido['respuesta_correcta'] === 'C') {
+                                    echo 'selected';
+                                }
+                                ?>
+                            >
+                                C
+                            </option>
+
+                            <option
+                                value="D"
+                                <?php
+                                if ($contenido['respuesta_correcta'] === 'D') {
+                                    echo 'selected';
+                                }
+                                ?>
+                            >
+                                D
+                            </option>
+
+                        </select>
+
+                    <?php endif; ?>
 
                 </div>
 
@@ -131,14 +374,17 @@
                 <div class="form-actions">
 
                     <a
-                        href="/lessasv/controllers/JuegoParejaController.php?accion=listar&id_juego=<?php echo $juego['id_juego']; ?>"
+                        href="/lessasv/controllers/JuegoPreguntaController.php?accion=listar&id_juego=<?php echo $juego['id_juego']; ?>"
                         class="btn-cancelar"
                     >
                         Cancelar
                     </a>
 
-                    <button type="submit" class="btn-crear">
-                        Guardar pareja
+                    <button
+                        type="submit"
+                        class="btn-actualizar"
+                    >
+                        Guardar cambios
                     </button>
 
                 </div>
@@ -150,43 +396,66 @@
     </main>
 
 
-    <div id="modalLogout" class="modal">
+    <!-- VENTANA MODAL FLOTANTE CERRAR SESIÓN -->
 
-        <div class="modal-box" id="boxPreguntaLogout">
+    <div id="modalLogout" class="modal-overlay" style="display: none;">
 
-            <div class="modal-icon">⚠</div>
+        <div class="modal-box">
 
-            <h3>¿Cerrar sesión?</h3>
+            <div id="boxPregunta">
 
-            <p>
-                ¿Estás seguro de que deseas cerrar tu sesión?
-            </p>
+                <div class="modal-icono-danger">
 
-            <div class="modal-actions">
+                    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                        <polyline points="16 17 21 12 16 7"/>
+                        <line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
 
-                <button type="button" id="btnCancelarLogout" class="btn-cancelar">
-                    Cancelar
-                </button>
+                </div>
 
-                <button type="button" id="btnConfirmarLogout" class="btn-confirmar">
-                    Cerrar sesión
-                </button>
+                <h3>¿Cerrar sesión?</h3>
+
+                <p>
+                    ¿Estás seguro de que deseas salir del Panel Administrador?
+                </p>
+
+                <div class="modal-acciones">
+
+                    <button
+                        type="button"
+                        class="btn-secundario"
+                        id="btnCancelarLogout"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-danger"
+                        id="btnConfirmarLogout"
+                    >
+                        Sí, salir
+                    </button>
+
+                </div>
 
             </div>
 
-        </div>
 
+            <div id="boxCargando" style="display: none;">
 
-        <div class="modal-box" id="boxCargandoLogout" style="display:none;">
+                <div class="rueda-spinner"></div>
 
-            <div class="spinner"></div>
+                <h3>Cerrando sesión...</h3>
 
-            <h3>Cerrando sesión...</h3>
+                <p>
+                    Redirigiendo en
+                    <strong id="txtSegundos">5</strong>
+                    segundos.
+                </p>
 
-            <p>
-                Serás redirigido en
-                <span id="contadorLogout">3</span>
-            </p>
+            </div>
 
         </div>
 
@@ -195,46 +464,69 @@
 
     <script>
 
-        const btnAbrirLogout = document.getElementById("btnAbrirLogout");
-        const modalLogout = document.getElementById("modalLogout");
-        const btnCancelarLogout = document.getElementById("btnCancelarLogout");
-        const btnConfirmarLogout = document.getElementById("btnConfirmarLogout");
-        const boxPreguntaLogout = document.getElementById("boxPreguntaLogout");
-        const boxCargandoLogout = document.getElementById("boxCargandoLogout");
-        const contadorLogout = document.getElementById("contadorLogout");
+        const btnAbrir =
+            document.getElementById('btnAbrirLogout');
 
-        btnAbrirLogout.addEventListener("click", function (e) {
+        const btnCancelar =
+            document.getElementById('btnCancelarLogout');
+
+        const btnConfirmar =
+            document.getElementById('btnConfirmarLogout');
+
+        const modal =
+            document.getElementById('modalLogout');
+
+        const boxPregunta =
+            document.getElementById('boxPregunta');
+
+        const boxCargando =
+            document.getElementById('boxCargando');
+
+        const txtSegundos =
+            document.getElementById('txtSegundos');
+
+
+        btnAbrir.addEventListener('click', (e) => {
 
             e.preventDefault();
 
-            modalLogout.style.display = "flex";
+            boxPregunta.style.display = 'block';
+
+            boxCargando.style.display = 'none';
+
+            modal.style.display = 'flex';
 
         });
 
-        btnCancelarLogout.addEventListener("click", function () {
 
-            modalLogout.style.display = "none";
+        btnCancelar.addEventListener('click', () => {
+
+            modal.style.display = 'none';
 
         });
 
-        btnConfirmarLogout.addEventListener("click", function () {
 
-            boxPreguntaLogout.style.display = "none";
-            boxCargandoLogout.style.display = "block";
+        btnConfirmar.addEventListener('click', () => {
 
-            let contador = 3;
+            boxPregunta.style.display = 'none';
 
-            contadorLogout.textContent = contador;
+            boxCargando.style.display = 'block';
 
-            const intervalo = setInterval(function () {
+            let seg = 5;
 
-                contador--;
+            txtSegundos.textContent = seg;
 
-                contadorLogout.textContent = contador;
 
-                if (contador <= 0) {
+            const timer = setInterval(() => {
 
-                    clearInterval(intervalo);
+                seg--;
+
+                txtSegundos.textContent = seg;
+
+
+                if (seg <= 0) {
+
+                    clearInterval(timer);
 
                     window.location.href =
                         "/lessasv/controllers/AuthController.php?accion=logout";

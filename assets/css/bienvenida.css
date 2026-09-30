@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #05070d;
+    color: white;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   PANTALLAS
+   ========================================= */
+
+.pantalla {
+    width: 100%;
+    height: 100vh;
+}
+
+
+/* =========================================
+   BIENVENIDA
+   ========================================= */
+
+.bienvenida {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at center, #101b38 0%, #080d1b 45%, #05070d 100%);
+
+    transition: opacity 0.5s ease,
+                transform 0.5s ease;
+}
+
+
+.contenido-bienvenida {
+    width: 90%;
+    max-width: 600px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    animation: aparecer 1s ease;
+}
+
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+.logo-empresa {
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    background: #05070d;
+
+    border: 3px solid #0052ff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 28px;
+
+    box-shadow:
+        0 0 20px rgba(0, 82, 255, 0.3),
+        0 0 50px rgba(0, 82, 255, 0.15);
+}
+
+
+.logo-temporal {
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    background: #000000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+/* Si posteriormente utilizas una imagen */
+
+.logo-empresa img {
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   TITULO
+   ========================================= */
+
+.contenido-bienvenida h1 {
+    font-size: 42px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+
+.lema {
+    font-size: 20px;
+
+    color: #4d8dff;
+
+    margin-bottom: 18px;
+
+    font-weight: 500;
+}
+
+
+.descripcion {
+    max-width: 480px;
+
+    color: #aeb7ca;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   BOTON
+   ========================================= */
+
+.btn-iniciar {
+    border: none;
+
+    padding: 14px 38px;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #0066ff,
+        #0044cc
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+    box-shadow:
+        0 8px 25px rgba(0, 82, 255, 0.25);
+}
+
+
+.btn-iniciar:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 82, 255, 0.4);
+
+    background: linear-gradient(
+        135deg,
+        #1474ff,
+        #0052ff
+    );
+}
+
+
+.btn-iniciar:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   ANIMACION AL SALIR
+   ========================================= */
+
+.bienvenida.ocultar {
+    opacity: 0;
+
+    transform: scale(1.05);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   PANTALLA DE CARGA
+   ========================================= */
+
+.carga {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at center, #101b38 0%, #080d1b 45%, #05070d 100%);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: opacity 0.4s ease,
+                visibility 0.4s ease;
+}
+
+
+.carga.mostrar {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.contenido-carga {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.logo-carga {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: #000;
+
+    border: 2px solid #0052ff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 0 25px rgba(0, 82, 255, 0.3);
+}
+
+
+/* =========================================
+   SPINNER
+   ========================================= */
+
+.spinner {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 4px solid #1a2540;
+
+    border-top: 4px solid #0066ff;
+
+    animation: girar 0.8s linear infinite;
+
+    margin-bottom: 22px;
+}
+
+
+.contenido-carga h2 {
+    font-size: 22px;
+
+    margin-bottom: 8px;
+}
+
+
+.contenido-carga p {
+    color: #8d98ad;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   ANIMACIONES
+   ========================================= */
+
+@keyframes girar {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .logo-empresa {
+        width: 150px;
+        height: 150px;
+    }
+
+    .logo-temporal {
+        width: 125px;
+        height: 125px;
+
+        font-size: 20px;
+    }
+
+    .contenido-bienvenida h1 {
+        font-size: 32px;
+    }
+
+    .lema {
+        font-size: 17px;
+    }
+
+    .descripcion {
+        font-size: 14px;
+
+        padding: 0 15px;
+    }
+
+}
